@@ -137,16 +137,10 @@ Virtualenv no es la unica herramienta para creación de entornos virtuales pero 
 * [zc.buildout](https://pypi.org/project/zc.buildout/) 
 * [conda](https://conda.io/docs/user-guide/tasks/manage-environments.html) Crea, clona, y maneja entornos virtuales, además de gestionar librerías (instalar, actualizar, borrar, etc.) y versiones de Python.
 
-
 ## Referencias
 * Documentación oficial de Virtualenv [https://virtualenv.pypa.io](https://virtualenv.pypa.io/en/stable/)
 * Virtualenv en Pypi [https://pypi.org/project/virtualenv/](https://pypi.org/project/virtualenv/)
 * [https://wiki.archlinux.org/index.php/Python/Virtual&lowbar;environment&lowbar;(Español)](https://wiki.archlinux.org/index.php/Python/Virtual_environment_(Espa%C3%B1ol))
-
-
-## Estado
-* 07/08/2018 - Pendiente de Revisión
-
 
 ## Author
 * Ricardo D. Quiroga [ricardoquiroga.dev@gmail.com](mailto://ricardoquiroga.dev@gmail.com)
