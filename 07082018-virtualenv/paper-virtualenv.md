@@ -1,7 +1,7 @@
 ![Python Norte](python-norte-logo.jpg)
 
 # Usando Virtualenv 
- 
+
 Draft sobre *Virtualenv* creado para el sprint del dia 7 de agosto de 2018 organizado por la comunidad **#PythonNorte** este 
 documento no pretende ser una guia completa sino mas bien un elemento de referencia para complementar el tema tratado en dicha reunión, 
 los conceptos expuestos no son 100% exactos sino  mas bien a de considerarse en muchos casos la interpretación del autor y debe recurrirse a la
@@ -46,14 +46,17 @@ A nivel de archivos del sistema, un entorno virtual no es mas que un arbol de di
 ## Algunas opciones utiles a la hora de crear entornos virtuales
 
 #### --python
-Al momento de crear un entorno virtual podemos especificar que version de python queremos que se use mediante la ruta del ejecutable, un ejemplo en 
-windows para especificar que el virtualenv trabaje con python 2.7 seria el siguiente:
+Al momento de crear un entorno virtual podemos especificar que version de python queremos que se use mediante la ruta del ejecutable, un ejemplo en windows para especificar que el virtualenv trabaje con python 2.7 seria el siguiente:
 
     virtualenv --python=C:\Python27\python.exe myEnv
 
 Existe un alias `-p` que hace lo mismo
-  
+
     virtualenv -p C:\Python27\python.exe myEnv
+
+En sistemas Linux basados en Debian o Ubuntu puede ser así:
+
+    $ virtualenv -p /usr/bin/python2.7 myEnv
 
 #### --clear
 Limpia y elimina todos los paquetes instalados en un entorno especifico, uso:
@@ -85,8 +88,14 @@ La manera de activar un entorno virtual dependera del sistema operativo en el qu
 
 > Pido mil disculpas pero no tengo una MAC.
 
+### Cómo puedo saber si el entorno está activado?
+
+Debe aparecer de la siguiente forma:
+
+      (NombreDelEntorno)$ 
 
 ## Desactivando el entorno virtual
+
 Para desactivar, dejar de usar un entorno virtual basta solo con escribir el siguiente comando:
 
     $ deactivate
@@ -95,13 +104,13 @@ Para desactivar, dejar de usar un entorno virtual basta solo con escribir el sig
 ## Clonar un entorno virtual
 Virtualenv no ofrece una funcionalidad especifica para esta tarea, pero podemos hacerlo sencillamente usando **pip** para ello activamos el entorno virtual que queremos clonar ejecutamos el siguiente comando:
 
-    $ pip freeze > requeriments.txt
+    (NombreDelEntorno)$ pip freeze > requeriments.txt
 
 lo que obtendremos aqui es el listado de paquetes con su correspondiente versión instalada, ahora solo tenemos que: 
 
 Desactivar el entorno actual
 
-    $ deactivate
+    (NombreDelEntorno)$ deactivate
 
 Crear y activar el nuevo (a modo ejemplo llamaremos *clon* supondremos que estamos trabajando en GNU/Linux)
 
@@ -110,7 +119,7 @@ Crear y activar el nuevo (a modo ejemplo llamaremos *clon* supondremos que estam
 
 para hacer que pip instale los paquetes necesarios utilizaremos el archivo *requeriments.txt* creado con el comando `pip freeze > requeriments.txt` de la siguiente manera:
 
-    $ pip install -r requeriments.txt
+    (clon)$ pip install -r requeriments.txt
 
 ## Eliminar un entorno virtual
 Un entorno virtual no es mas que un directorio, la forma de eliminarlo es simplemente borrandolo, por lo que si queremos hacerlo solo
@@ -126,12 +135,14 @@ Virtualenv no es la unica herramienta para creación de entornos virtuales pero 
 * [workingenv](https://pypi.org/project/workingenv.py/) Vendria a ser el predecesor de *virtualenv*
 * [virtual-python](http://peak.telecommunity.com/dist/virtual-python.py) Solo crea enlaces simbolicos.
 * [zc.buildout](https://pypi.org/project/zc.buildout/) 
+* [conda](https://conda.io/docs/user-guide/tasks/manage-environments.html) Crea, clona, y maneja entornos virtuales, además de gestionar librerías (instalar, actualizar, borrar, etc.) y versiones de Python.
 
 
 ## Referencias
 * Documentación oficial de Virtualenv [https://virtualenv.pypa.io](https://virtualenv.pypa.io/en/stable/)
 * Virtualenv en Pypi [https://pypi.org/project/virtualenv/](https://pypi.org/project/virtualenv/)
 * [https://wiki.archlinux.org/index.php/Python/Virtual&lowbar;environment&lowbar;(Español)](https://wiki.archlinux.org/index.php/Python/Virtual_environment_(Espa%C3%B1ol))
+
 
 ## Estado
 * 07/08/2018 - Pendiente de Revisión
@@ -140,3 +151,7 @@ Virtualenv no es la unica herramienta para creación de entornos virtuales pero 
 ## Author
 * Ricardo D. Quiroga [ricardoquiroga.dev@gmail.com](mailto://ricardoquiroga.dev@gmail.com)
 * Comunidad de Python Norte [pythonnorte@gmail.com](mailto://pythonnorte@gmail.com)
+
+## Colaboradores
+
+* Horacio F. Mayo [oldoger@gmail.com](mailto://oldoger@gmail.com)
