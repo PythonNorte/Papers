@@ -47,7 +47,18 @@ Situarnos en el directorio del proyecto y crear el entorno virtual
 ### instalar dependencias
 
     $ pip install -r requeriments.txt
+    $ pip install -U pillow imageio
+    
+#### Posible warning tensorflow y setuptools 
 
+En caso de recibir la siguiente alerta durante la instalación:
+
+> tensorflow 1.10.0 has requirement setuptools<=39.1.0, but you'll have setuptools 40.2.0 which is incompatible.
+
+solo hay que reinstalar `tensorflow` y solo hara el downgrade de setuptools
+
+	pip install -U tensorflow 
+    
 ## Prueba
 
 Con todo esto ya tendremos listo el entorno de trabajo para probar que todo este funcionando se puede probar el siguiente ejemplo.
