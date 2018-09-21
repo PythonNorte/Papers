@@ -7,6 +7,7 @@ Gets to 99.25% test accuracy after 12 epochs
 
 from __future__ import print_function
 import numpy as np
+import matplotlib.pyplot as plt
 np.random.seed(1337)  # for reproducibility
 
 from keras.datasets import mnist
